@@ -1,0 +1,24 @@
+<?xml version="1.0" ?>
+<layout>
+    <adminhtml_sales_order_index>
+        <reference name="head">
+            <action method="addJs"><script>deividnetwork/invoiceprint/jquery/jquery-2.2.0.min.js</script></action>
+            <action method="addJs"><script>deividnetwork/invoiceprint/jquery/noconflict.js</script></action>
+            <action method="addJs"><script>deividnetwork/invoiceprint/order/main.js</script></action>
+        </reference>
+    </adminhtml_sales_order_index>
+    <adminhtml_sales_invoice_index>
+        <reference name="head">
+            <action method="addJs"><script>deividnetwork/invoiceprint/jquery/jquery-2.2.0.min.js</script></action>
+            <action method="addJs"><script>deividnetwork/invoiceprint/jquery/noconflict.js</script></action>
+            <action method="addJs"><script>deividnetwork/invoiceprint/invoice/main.js</script></action>
+        </reference>
+    </adminhtml_sales_invoice_index>
+    <adminhtml_sales_shipment_index>
+        <reference name="head">
+            <action method="addJs"><script>deividnetwork/invoiceprint/jquery/jquery-2.2.0.min.js</script></action>
+            <action method="addJs"><script>deividnetwork/invoiceprint/jquery/noconflict.js</script></action>
+            <action method="addJs"><script>deividnetwork/invoiceprint/shipment/main.js</script></action>
+        </reference>
+    </adminhtml_sales_shipment_index>
+</layout>

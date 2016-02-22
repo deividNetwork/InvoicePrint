@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Deividnetwork_Invoiceprint>
+            <active>true</active>
+            <codePool>local</codePool>
+        </Deividnetwork_Invoiceprint>
+    </modules>
+</config>
