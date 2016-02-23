@@ -16,203 +16,204 @@
 <body>
     <a href="#!" onclick="window.print()" id="btn-print">Imprimir!</a>
     <?php foreach($this->getOrders() as $order) { ?>
-        <table width="700" align="center">
-            <tr>
-                <td width="35%" valign="center" align="center">
-                    <img src="<?php echo $this->getAssetsUrl('images/logo.png'); ?>">
-                </td>
-                <td width="30%" valign="center">
-                    <small>
-                        Documento Auxiliar da <br>
-                        Nota Fiscal Eletrônico <br><br>
+        <div class="papper">
+            <table width="700" align="center">
+                <tr>
+                    <td width="35%" valign="center" align="center">
+                        <img src="<?php echo $this->getAssetsUrl('images/logo.png'); ?>">
+                    </td>
+                    <td width="30%" valign="center">
+                        <small>
+                            Documento Auxiliar da <br>
+                            Nota Fiscal Eletrônico <br><br>
 
-                        1 - Entrada <br>
-                        2 - Saída <br><br>
+                            1 - Entrada <br>
+                            2 - Saída <br><br>
 
-                        <strong>Nº <?php echo $order['id'] ?></strong>
-                    </small>
-                </td>
-                <td width="35%" valign="center" align="center" class="bar-code">
-                    <small>
-                        Código de barras
-                    </small>
+                            <strong>Nº <?php echo $order['id'] ?></strong>
+                        </small>
+                    </td>
+                    <td width="35%" valign="center" align="center" class="bar-code">
+                        <small>
+                            Código de barras
+                        </small>
                 <span>
                     <br>
                     <?php echo $order['id'] ?>
                 </span>
-                </td>
-            </tr>
-        </table>
-        <table width="700" align="center">
-            <tr>
-                <td colspan="4">
-                    <strong>Destinário/Remetente</strong>
-                </td>
-            </tr>
-            <tr>
-                <td colspan="2">
-                    <small>Nome / Razão Social</small>
-                    <br>
-                    <?php echo $order['customer_name'] ?>
-                </td>
-                <td>
-                    <small>E-mail</small>
-                    <br>
-                    <?php echo $order['customer_email'] ?>
-                </td>
-                <td>
-                    <small>Data emissão</small>
-                    <br>
-                    <?php echo $order['emission_date'] ?>
-                </td>
-            </tr>
-            <tr>
-                <td colspan="2">
-                    <small>Endereço</small>
-                    <br>
-                    <?php echo $order['customer_street'] ?>
-                </td>
-                <td>
-                    <small>CEP</small>
-                    <br>
-                    <?php echo $order['customer_postcode'] ?>
-                </td>
-                <td>
-                    <small>Hora</small>
-                    <br>
-                    <?php echo $order['emission_hour'] ?>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <small>País</small>
-                    <br>
-                    <?php echo $order['customer_country'] ?>
-                </td>
-                <td>
-                    <small>Cidade</small>
-                    <br>
-                    <?php echo $order['customer_city'] ?>
-                </td>
-                <td>
-                    <small>Telefone</small>
-                    <br>
-                    <?php echo $order['customer_telephone'] ?>
-                </td>
-
-                <td>
-                    <small>Celular</small>
-                    <br>
-                    <?php echo $order['customer_fax'] ?>
-                </td>
-            </tr>
-        </table>
-        <table width="700" align="center">
-            <tr>
-                <td colspan="5">
-                    <strong>Produtos</strong>
-                </td>
-            </tr>
-            <tr>
-                <th>QTD</th>
-                <th>SKU</th>
-                <th>Descrição</th>
-                <th>Preço</th>
-                <th>Total</th>
-            </tr>
-            <?php foreach($order['products'] as $product) { ?>
-                <tr>
-                    <td><?php echo $product['qtd']?></td>
-                    <td><?php echo $product['sku']?></td>
-                    <td><?php echo $product['name']?><br/></td>
-                    <td><?php echo $product['price']?></td>
-                    <td><?php echo $product['price_total']?></td>
+                    </td>
                 </tr>
-            <?php } ?>
-        </table>
-        <table width="700" align="center">
-            <tr>
-                <td colspan="4">
-                    <strong>Total a pagar</strong>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <small>Subtotal</small>
-                    <br>
-                    <?php echo $order['subtotal'] ?>
-                </td>
-                <td>
-                    <small><?php echo $order['shipping_method'] ?></small>
-                    <br>
-                    <?php echo $order['shipping_method_price'] ?>
-                </td>
-                <td>
-                    <small>Desconto</small>
-                    <br>
-                    <?php echo $order['discount_amount'] ?>
-                </td>
-                <td align="right">
-                    <small>Total</small>
-                    <br>
-                    <strong><?php echo $order['total'] ?></strong>
-                </td>
-            </tr>
-        </table>
-        <table width="700" align="center">
-            <tr>
-                <td colspan="6"><strong>Detalhes</strong></td>
-            </tr>
-            <tr>
-                <td>
-                    <small>Forma de Envio</small>
-                    <br>
-                    <?php echo $order['shipping_method'] ?>
-                </td>
-                <td>
-                    <small>Formas de Pagamento</small>
-                    <br>
-                    <?php echo $order['payment_method'] ?>
-                </td>
-                <td>
-                    <small>CNPJ / CPF</small>
-                    <br>
-                    <?php echo $order['customer_taxvat'] ?>
-                </td>
-            </tr>
-        </table>
-        <table width="700" align="center">
-            <tr>
-                <td colspan="2">
-                    <small>Endereço</small>
-                    <br>
-                    xxx
-                </td>
-                <td>
-                    <small>Cidade</small>
-                    <br>
-                    xxx
-                </td>
-                <td>
-                    <small>UF</small>
-                    <br>
-                    R$
-                </td>
-                <td>
-                    <small>Inscrição Estadual</small>
-                    <br>
-                    xxx
-                </td>
-            </tr>
-        </table>
-        <table width="700" align="center" class="no-border">
-            <tr>
-                <td align="center">
-                    <a href="http://wwww.offich.com.br" target="_blank">wwww.offich.com.br</a>
-                </td>
-            </tr>
-        </table>
-        <br><br><br><br><br>
+            </table>
+            <table width="700" align="center">
+                <tr>
+                    <td colspan="4">
+                        <strong>Destinário/Remetente</strong>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <small>Nome / Razão Social</small>
+                        <br>
+                        <?php echo $order['customer_name'] ?>
+                    </td>
+                    <td>
+                        <small>E-mail</small>
+                        <br>
+                        <?php echo $order['customer_email'] ?>
+                    </td>
+                    <td>
+                        <small>Data emissão</small>
+                        <br>
+                        <?php echo $order['emission_date'] ?>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <small>Endereço</small>
+                        <br>
+                        <?php echo $order['customer_street'] ?>
+                    </td>
+                    <td>
+                        <small>CEP</small>
+                        <br>
+                        <?php echo $order['customer_postcode'] ?>
+                    </td>
+                    <td>
+                        <small>Hora</small>
+                        <br>
+                        <?php echo $order['emission_hour'] ?>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <small>País</small>
+                        <br>
+                        <?php echo $order['customer_country'] ?>
+                    </td>
+                    <td>
+                        <small>Cidade</small>
+                        <br>
+                        <?php echo $order['customer_city'] ?>
+                    </td>
+                    <td>
+                        <small>Telefone</small>
+                        <br>
+                        <?php echo $order['customer_telephone'] ?>
+                    </td>
+
+                    <td>
+                        <small>Celular</small>
+                        <br>
+                        <?php echo $order['customer_fax'] ?>
+                    </td>
+                </tr>
+            </table>
+            <table width="700" align="center">
+                <tr>
+                    <td colspan="5">
+                        <strong>Produtos</strong>
+                    </td>
+                </tr>
+                <tr>
+                    <th>QTD</th>
+                    <th>SKU</th>
+                    <th>Descrição</th>
+                    <th>Preço</th>
+                    <th>Total</th>
+                </tr>
+                <?php foreach($order['products'] as $product) { ?>
+                    <tr>
+                        <td><?php echo $product['qtd'] ?></td>
+                        <td><?php echo $product['sku'] ?></td>
+                        <td><?php echo $product['name'] ?><br/></td>
+                        <td><?php echo $product['price'] ?></td>
+                        <td><?php echo $product['price_total'] ?></td>
+                    </tr>
+                <?php } ?>
+            </table>
+            <table width="700" align="center">
+                <tr>
+                    <td colspan="4">
+                        <strong>Total a pagar</strong>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <small>Subtotal</small>
+                        <br>
+                        <?php echo $order['subtotal'] ?>
+                    </td>
+                    <td>
+                        <small><?php echo $order['shipping_method'] ?></small>
+                        <br>
+                        <?php echo $order['shipping_method_price'] ?>
+                    </td>
+                    <td>
+                        <small>Desconto</small>
+                        <br>
+                        <?php echo $order['discount_amount'] ?>
+                    </td>
+                    <td align="right">
+                        <small>Total</small>
+                        <br>
+                        <strong><?php echo $order['total'] ?></strong>
+                    </td>
+                </tr>
+            </table>
+            <table width="700" align="center">
+                <tr>
+                    <td colspan="6"><strong>Detalhes</strong></td>
+                </tr>
+                <tr>
+                    <td>
+                        <small>Forma de Envio</small>
+                        <br>
+                        <?php echo $order['shipping_method'] ?>
+                    </td>
+                    <td>
+                        <small>Formas de Pagamento</small>
+                        <br>
+                        <?php echo $order['payment_method'] ?>
+                    </td>
+                    <td>
+                        <small>CNPJ / CPF</small>
+                        <br>
+                        <?php echo $order['customer_taxvat'] ?>
+                    </td>
+                </tr>
+            </table>
+            <table width="700" align="center">
+                <tr>
+                    <td colspan="2">
+                        <small>Endereço</small>
+                        <br>
+                        xxx
+                    </td>
+                    <td>
+                        <small>Cidade</small>
+                        <br>
+                        xxx
+                    </td>
+                    <td>
+                        <small>UF</small>
+                        <br>
+                        R$
+                    </td>
+                    <td>
+                        <small>Inscrição Estadual</small>
+                        <br>
+                        xxx
+                    </td>
+                </tr>
+            </table>
+            <table width="700" align="center" class="no-border">
+                <tr>
+                    <td align="center">
+                        <a href="http://wwww.offich.com.br" target="_blank">wwww.offich.com.br</a>
+                    </td>
+                </tr>
+            </table>
+        </div>
     <?php } ?>
 </body>
 </html>

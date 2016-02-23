@@ -2,39 +2,43 @@ body {
     font: 13px Helvetica;
 }
 
-table {
+.papper {
+    margin-bottom: 5em;
+}
+
+.papper table {
     margin-bottom: 10px;
     background: #FFF;
 }
 
-table, td, th {
+.papper table, td, th {
     border: 1px solid #000000;
     border-collapse: collapse;
 }
 
-table td, th {
+.papper table td, th {
     padding: 5px;
 }
 
-table.no-border,
-table.no-border td,
-table.no-border th {
+.papper table.no-border,
+.papper table.no-border td,
+.papper table.no-border th {
     border: 0;
     margin-bottom: 0;
 }
 
-table img {
+.papper table img {
     display: inline-block;
 }
 
-table .bar-code span {
+.papper table .bar-code span {
     font-family: Code39AzaleaFont;
     font-size: 45px;
 }
 
 a#btn-print {
     padding: 15px 50px;
-    background: linear-gradient(to bottom, #0071BB, #7EBAE2);
+    background: linear-gradient(to bottom, #006CB3, #B6D8EF);
     transition: all 0.3s linear 0s;
     box-sizing: border-box;
     color: #FFF;
@@ -43,14 +47,23 @@ a#btn-print {
     box-shadow: 0px 1px 1px #0071bb;
     position: fixed;
     border-radius: 5px;
-    right: 20px;
-    bottom: 20px;
+    right: 30px;
+    bottom: 30px;
     font-size: 20px;
-    font-weight: bold;
+    font-weight: normal;
 }
 
 @media print {
     a#btn-print {
         display: none;
+    }
+
+    .papper {
+        page-break-after: always;
+        margin-bottom: 0;
+    }
+
+    .papper table {
+        width: 100%;
     }
 }
