@@ -16,6 +16,10 @@
 <body>
     <a href="#!" onclick="window.print()" id="btn-print">Imprimir!</a>
     <?php foreach($this->getOrders() as $order) { ?>
+        <?php
+        //$order['created_at'] //Data em que o pedido foi criado
+        //$order['updated_at'] //Data em que o pedido foi atualizado
+        ?>
         <div class="papper">
             <table width="700" align="center">
                 <tr>
@@ -24,8 +28,8 @@
                     </td>
                     <td width="30%" valign="center">
                         <small>
-                            Documento Auxiliar da <br>
-                            Nota Fiscal Eletrônico <br><br>
+                            Documento Auxiliar de <br>
+                            Controle de vendas <br><br>
 
                             1 - Entrada <br>
                             2 - Saída <br><br>
@@ -134,6 +138,18 @@
             <table width="700" align="center">
                 <tr>
                     <td colspan="4">
+                        <strong>Quantidade total</strong>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <?php echo $order['qtd_total'] ?>
+                    </td>
+                </tr>
+            </table>
+            <table width="700" align="center">
+                <tr>
+                    <td colspan="4">
                         <strong>Total a pagar</strong>
                     </td>
                 </tr>
@@ -184,25 +200,25 @@
             </table>
             <table width="700" align="center">
                 <tr>
-                    <td colspan="2">
-                        <small>Endereço</small>
+                    <td>
+                        <small>Caixa Postal</small>
                         <br>
-                        xxx
+                        59002
                     </td>
                     <td>
                         <small>Cidade</small>
                         <br>
-                        xxx
+                        São Paulo
+                    </td>
+                    <td>
+                        <small>CEP</small>
+                        <br>
+                        02066-973
                     </td>
                     <td>
                         <small>UF</small>
                         <br>
                         R$
-                    </td>
-                    <td>
-                        <small>Inscrição Estadual</small>
-                        <br>
-                        xxx
                     </td>
                 </tr>
             </table>

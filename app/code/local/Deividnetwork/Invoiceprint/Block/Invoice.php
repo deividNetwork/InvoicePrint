@@ -20,6 +20,9 @@
                     $data[$id_order]['emission_date'] = date('d/m/Y');
                     $data[$id_order]['emission_hour'] = date('H:i:s');
 
+                    $data[$id_order]['created_at'] = $order->getCreatedAt();
+                    $data[$id_order]['updated_at'] = $order->getUpdatedAt();
+
                     $data[$id_order]['customer_name'] = $order->getCustomerName();
                     $data[$id_order]['customer_email'] = $order->getCustomerEmail();
                     $data[$id_order]['customer_taxvat'] = $order->getCustomerTaxvat() ? $order->getCustomerTaxvat() : '000-000-000-00';
@@ -52,6 +55,8 @@
 
                     $data[$id_order]['products'] = array();
 
+                    $data[$id_order]['qtd_total'] = 0;
+
                     foreach($order->getAllVisibleItems() as $item) {
                         $data[$id_order]['products'][$item->getSku()]['qtd'] = number_format($item->getQtyOrdered(), 0);
                         $data[$id_order]['products'][$item->getSku()]['name'] = $item->getName();
@@ -59,6 +64,8 @@
                         $data[$id_order]['products'][$item->getSku()]['desc'] =  $item->getDescription();
                         $data[$id_order]['products'][$item->getSku()]['price'] = $order->formatPriceTxt($item->getPrice());
                         $data[$id_order]['products'][$item->getSku()]['price_total'] = $order->formatPriceTxt($item->getRowTotal());
+
+                        $data[$id_order]['qtd_total'] = ($data[$id_order]['qtd_total'] + $data[$id_order]['products'][$item->getSku()]['qtd']);
                     }
                 }
             }

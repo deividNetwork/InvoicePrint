@@ -2,23 +2,80 @@
 <layout>
     <adminhtml_sales_order_index>
         <reference name="head">
-            <action method="addJs"><script>deividnetwork/invoiceprint/jquery/jquery-2.2.0.min.js</script></action>
-            <action method="addJs"><script>deividnetwork/invoiceprint/jquery/noconflict.js</script></action>
-            <action method="addJs"><script>deividnetwork/invoiceprint/order/main.js</script></action>
+            <action method="addJs">
+                <script>deividnetwork/invoiceprint/jquery/jquery-2.2.0.min.js</script>
+            </action>
+            <action method="addJs">
+                <script>deividnetwork/invoiceprint/jquery/noconflict.js</script>
+            </action>
+            <action method="addJs">
+                <script>deividnetwork/invoiceprint/order/main.js</script>
+            </action>
         </reference>
     </adminhtml_sales_order_index>
+    <adminhtml_sales_order_view>
+        <reference name="head">
+            <action method="addJs">
+                <script>deividnetwork/invoiceprint/jquery/jquery-2.2.0.min.js</script>
+            </action>
+            <action method="addJs">
+                <script>deividnetwork/invoiceprint/jquery/noconflict.js</script>
+            </action>
+            <action method="addJs">
+                <script>deividnetwork/invoiceprint/order/view.js</script>
+            </action>
+        </reference>
+    </adminhtml_sales_order_view>
     <adminhtml_sales_invoice_index>
         <reference name="head">
-            <action method="addJs"><script>deividnetwork/invoiceprint/jquery/jquery-2.2.0.min.js</script></action>
-            <action method="addJs"><script>deividnetwork/invoiceprint/jquery/noconflict.js</script></action>
-            <action method="addJs"><script>deividnetwork/invoiceprint/invoice/main.js</script></action>
+            <action method="addJs">
+                <script>deividnetwork/invoiceprint/jquery/jquery-2.2.0.min.js</script>
+            </action>
+            <action method="addJs">
+                <script>deividnetwork/invoiceprint/jquery/noconflict.js</script>
+            </action>
+            <action method="addJs">
+                <script>deividnetwork/invoiceprint/invoice/main.js</script>
+            </action>
         </reference>
     </adminhtml_sales_invoice_index>
+    <adminhtml_sales_order_invoice_view>
+        <reference name="head">
+            <action method="addJs">
+                <script>deividnetwork/invoiceprint/jquery/jquery-2.2.0.min.js</script>
+            </action>
+            <action method="addJs">
+                <script>deividnetwork/invoiceprint/jquery/noconflict.js</script>
+            </action>
+            <action method="addJs">
+                <script>deividnetwork/invoiceprint/invoice/view.js</script>
+            </action>
+        </reference>
+    </adminhtml_sales_order_invoice_view>
     <adminhtml_sales_shipment_index>
         <reference name="head">
-            <action method="addJs"><script>deividnetwork/invoiceprint/jquery/jquery-2.2.0.min.js</script></action>
-            <action method="addJs"><script>deividnetwork/invoiceprint/jquery/noconflict.js</script></action>
-            <action method="addJs"><script>deividnetwork/invoiceprint/shipment/main.js</script></action>
+            <action method="addJs">
+                <script>deividnetwork/invoiceprint/jquery/jquery-2.2.0.min.js</script>
+            </action>
+            <action method="addJs">
+                <script>deividnetwork/invoiceprint/jquery/noconflict.js</script>
+            </action>
+            <action method="addJs">
+                <script>deividnetwork/invoiceprint/shipment/main.js</script>
+            </action>
         </reference>
     </adminhtml_sales_shipment_index>
+    <adminhtml_sales_order_shipment_view>
+        <reference name="head">
+            <action method="addJs">
+                <script>deividnetwork/invoiceprint/jquery/jquery-2.2.0.min.js</script>
+            </action>
+            <action method="addJs">
+                <script>deividnetwork/invoiceprint/jquery/noconflict.js</script>
+            </action>
+            <action method="addJs">
+                <script>deividnetwork/invoiceprint/shipment/view.js</script>
+            </action>
+        </reference>
+    </adminhtml_sales_order_shipment_view>
 </layout>
