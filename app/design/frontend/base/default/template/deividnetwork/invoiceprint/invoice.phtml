@@ -16,10 +16,6 @@
 <body>
     <a href="#!" onclick="window.print()" id="btn-print">Imprimir!</a>
     <?php foreach($this->getOrders() as $order) { ?>
-        <?php
-        //$order['created_at'] //Data em que o pedido foi criado
-        //$order['updated_at'] //Data em que o pedido foi atualizado
-        ?>
         <div class="papper">
             <table width="700" align="center">
                 <tr>
@@ -114,7 +110,7 @@
             </table>
             <table width="700" align="center">
                 <tr>
-                    <td colspan="5">
+                    <td colspan="6">
                         <strong>Produtos</strong>
                     </td>
                 </tr>
@@ -122,6 +118,7 @@
                     <th>QTD</th>
                     <th>SKU</th>
                     <th>Descrição</th>
+                    <th>Opções</th>
                     <th>Preço</th>
                     <th>Total</th>
                 </tr>
@@ -130,6 +127,7 @@
                         <td><?php echo $product['qtd'] ?></td>
                         <td><?php echo $product['sku'] ?></td>
                         <td><?php echo $product['name'] ?><br/></td>
+                        <td><?php echo $product['options'] ?></td>
                         <td><?php echo $product['price'] ?></td>
                         <td><?php echo $product['price_total'] ?></td>
                     </tr>
@@ -218,7 +216,7 @@
                     <td>
                         <small>UF</small>
                         <br>
-                        R$
+                        SP
                     </td>
                 </tr>
             </table>

@@ -58,7 +58,14 @@
                     $data[$id_order]['qtd_total'] = 0;
 
                     foreach($order->getAllVisibleItems() as $item) {
+                        $options = ''; //No Options...
+
+                        foreach($item->getProductOptions()['options'] as $opt) {
+                            $options .= $opt['label'] . ': ' . $opt['value'] . '<br/>';
+                        }
+
                         $data[$id_order]['products'][$item->getSku()]['qtd'] = number_format($item->getQtyOrdered(), 0);
+                        $data[$id_order]['products'][$item->getSku()]['options'] = $options == '' ? '---' : $options;
                         $data[$id_order]['products'][$item->getSku()]['name'] = $item->getName();
                         $data[$id_order]['products'][$item->getSku()]['sku'] = $item->getSku();
                         $data[$id_order]['products'][$item->getSku()]['desc'] =  $item->getDescription();
